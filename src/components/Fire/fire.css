@@ -1,0 +1,27 @@
+.fire {
+	transform: translateY(100%);
+}
+
+.fire .cls-1,
+.fire.cls-1,
+.fire .cls-2,
+.fire .cls-3 {
+	fill: #171926;
+	stroke-width: 5px
+}
+
+.fire .cls-1,
+.fire.cls-1 {
+	stroke: #e73900
+}
+
+.fire .cls-2 {
+	stroke: #e78c00
+}
+
+.fire .cls-3 {
+	stroke: #e7e100
+}
+
+
+
