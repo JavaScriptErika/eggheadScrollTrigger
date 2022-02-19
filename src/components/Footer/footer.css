@@ -1,0 +1,11 @@
+
+
+footer {
+    height: 25vh;
+    overflow: hidden;
+}
+
+.cheese-background{
+    background: url('./cheese.svg') no-repeat;
+    background-size: cover;
+}

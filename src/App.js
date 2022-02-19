@@ -1,66 +1,76 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, {useRef, useLayoutEffect } from 'react';
 import './App.css';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// import SVG from './components/burger/SVG';
-// import BottomBun from './components/burger/BottomBun';
-// import Patty from './components/burger/Patty';
-// import Cheese from './components/burger/Cheese';
-// import Tomatoes from './components/burger/Tomatoes';
-// import Lettuce from './components/burger/Lettuce'
-// import TopBun from './components/burger/TopBun';
-import logo from './assets/logo/eggheadLogoFull.svg'
+import Hero from './components/Hero/Hero'
+import Footer from './components/Footer/Footer'
 import Fire from './components/Fire/Fire'
-// import { ReactComponent as Logo } from './logo/eggheadLogo.svg';
+import SaucySection from './components/SaucySection/SaucySection';
+import topBun from './components/burgerPNG/0-top.png'
+import lettuceMiddle from './components/burgerPNG/3-lettuce.png'
+import tomatoLeft from './components/burgerPNG/5-leftTomato.png'
+import cheese from './components/burgerPNG/7-cheese.png'
+import patty from './components/burgerPNG/8-patty.png'
+import bottomBun from './components/burgerPNG/9-bottomBun.png'
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Demo Dependencies
 // GSAP
 // https://stackoverflow.com/questions/40037657/how-to-include-bootstrap-css-and-js-in-reactjs-app
 
-function App() {
-  // const top_bun = useRef(null)
-  // const patty = useRef(null)
-  // const cheese = useRef(null)
-  // const bottom_bun = useRef(null)
-  // const tomato = useRef(null)
-  // const lettuce = useRef(null)
 
+
+
+function App() {
+
+  
+  const topBunRef = useRef()
+  const tomatoLeftRef = useRef()
+  const cheeseRef = useRef()
+  const pattyRef = useRef()
+  const bottomBunRef = useRef()
+
+
+  const topBunTextRef = useRef()
+  const burgerContainerRef = useRef()
+  const lettuceMiddleRef = useRef()
+  const lettuceTextRef = useRef()
+  const tomatoTextRef = useRef()
+  const cheeseTextRef = useRef()
+  const bottomBunTextRef = useRef()
+
+
+  useLayoutEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: burgerContainerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2,
+      },
+    })
+    
+    .to(".topBun",  { yPercent: 10 }, 0)
+    .fromTo(".middleLettuce", {yPercent: 110}, {yPercent: 175}, 0)
+    .fromTo(".tomatoLeft", { yPercent: 155 }, { yPercent: 300 }, 0)
+    .fromTo(".cheese", { yPercent: 110 }, { yPercent: 250 }, 0)
+    .fromTo(".patty", { yPercent: 80 }, { yPercent:  240 }, 0)
+    .fromTo(".bottomBun", { yPercent: 95 }, { yPercent: 250 }, 0)
+
+
+  }, []);
 
 
   return (
     <>
-    <div className="container text-center py-5">
-      <div className="row py-5">
-        <div className="col-md-8 offset-md-2 text-white">
-          <img src={logo} alt="egghead logo" className="img-fluid" style={{maxWidth: '20rem'}} />
-          <p className="d-inline h1"> bistro</p>
-          <p className="h3 py-2">presents the ultimately unreal</p>
-        </div>
-      </div>
-
-      <div className="row mt-5">
-        <div className="col-12">
-          <div className="d-inline-block text-white px-4 py-4 dotted-border">
-            <p className="text-white display-4">Badass Burger</p>
-          </div>
-        </div>
-      </div>
-
-      {/* <h1 style={{color: 'white', fontSize: '5rem'}}>Egghead Bistro</h1>
-        <SVG>
-          <BottomBun />
-          <Patty />
-          <Cheese />
-          <Tomatoes />
-          <Lettuce />
-          <TopBun />
-        </SVG> */}
-    </div>
-
+    <Hero />
     <section style={{overflowY: 'hidden', position: 'relative', height: '80vh'}} className="d-flex">
       <Fire />
     </section>
+
+
     <div className="border-yellow text-white text-center">
         <div className="container py-4">
           <div className="row">
@@ -71,9 +81,42 @@ function App() {
         </div>
       </div>
 
-      <div style={{height: '500rem'}}></div>
+      <SaucySection />
+      <section ref={burgerContainerRef} style={{paddingTop: '3rem'}}>
+      <div className="container mt-5 pt-5">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="burger" style={{minHeight: '10rem'}}>
+            <img src={bottomBun} className="bottomBun ingredient img-fluid" ref={bottomBunRef} />
+              
+            <img src={patty} className="patty ingredient img-fluid" ref={pattyRef} />
+            <img src={cheese} className="cheese ingredient img-fluid" ref={cheeseRef} />
+            <img src={tomatoLeft} className="tomatoLeft ingredient img-fluid" ref={tomatoLeftRef} />
+            <img src={lettuceMiddle} className="middleLettuce ingredient img-fluid" ref={lettuceMiddleRef} />
+            <img src={topBun} className="topBun ingredient img-fluid" ref={topBunRef} />
+            </div>
+          </div>
+          <div className="col-md-6 text-white" ref={topBunTextRef}>
+            <p className="h1">It starts with a bun. And the bun is soft. So soft.</p>
+            <p className="h1" ref={lettuceTextRef}>Lettuce. Lettuce give thanks for a bed of crisp. </p>
+            <p className="h1" ref={tomatoTextRef}>You lucky dog, we slap 2 tomato slices on. Fresh from the garden. Rinsed of course.</p>
+            <p className="h1" ref={cheeseTextRef}>The cheese melts on the burger and in your mouth, perfectly complementing the medium-rare mystery.</p>
+            <p className="h1" ref={bottomBunTextRef}>Like the beginning, it ends with a bun. And the bun is still soft. So soft.</p>
+          </div>
+        </div>
+      </div>
+    
+      </section>
+
+       <Footer className="mt-5"/>
     </>
   );
 }
 
 export default App;
+
+
+// Lettuce. Lettuce give thanks for a bed of crisp. 
+// You lucky dog, we slap 2 tomato slices on. Fresh from the garden. Rinsed of course.
+// The cheese melts on the burger and in your mouth, perfectly complementing the medium-rare beef.
+//It end with a bun. And the bun is still soft. So soft.np

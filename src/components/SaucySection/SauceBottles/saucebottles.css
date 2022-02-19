@@ -1,0 +1,19 @@
+.bottles {
+    position: relative;
+    height: 30rem;
+}
+
+.redSauce,
+.yellowSauce {
+    position: absolute;
+    max-width: 10rem;
+    right: 1rem;
+}
+
+.redSauce {
+
+}
+
+.yellowSauce {
+    z-index: -1;
+}

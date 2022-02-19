@@ -1,817 +1,754 @@
-html, body {
-	height: 100%;
-	margin: 0;
-  }
-
-body {
-  font-family: 'Permanent Marker', cursive;
-  background-image: linear-gradient(#131415, #000535);
-  height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-a {
-	text-decoration: none;
-}
-
-p {
-	margin-bottom: 0rem;
-}
-
-.burger {
-	position: relative;
-}
-
-.ingredient {
-	position: absolute;
-}
 
 
-/* .middleLettuce {
-	width: 90%;
-} */
-
-.tomatoLeft {
-	width: 80%;
-}
-
-
-
-.dotted-border {
-	position: relative;
-	border: 2px dotted #fff;
-	background: linear-gradient(#1E2241, transparent) no-repeat;
-	transform: rotate(-7deg);
-}
-
-.dotted-border:before {
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: -1rem;
-	background-image: url('./assets/newBadge.svg');
-	background-size: 5rem 5rem;
-	height: 5rem;
-	width: 5rem;
-}
-
-.border-yellow {
-	border: 3px solid #FFCC33;
-	border-right: none;
-	border-left: none;
-}
-
-.cls-1 {
+.st0 {
 	fill: #c58d50
 }
 
-.cls-3 {
+.st2 {
 	fill: #a96b49
 }
 
-.cls-13 {
+.st12 {
 	fill: #87592d
 }
 
-.cls-14 {
+.st13 {
 	fill: #684728
 }
 
-.cls-15 {
+.st14 {
 	fill: #be8649
 }
 
-.cls-17 {
+.st16 {
 	fill: #b27d45
 }
 
-.cls-18 {
+.st17 {
 	fill: #996634
 }
 
-.cls-19 {
+.st18 {
 	fill: #9b6736
 }
 
-.cls-20 {
+.st19 {
 	fill: #9a6046
 }
 
-.cls-26 {
+.st25 {
 	fill: #8f573f
 }
 
-.cls-27 {
+.st26 {
 	fill: #b07147
 }
 
-.cls-28 {
+.st27 {
 	fill: #d39a59
 }
 
-.cls-29 {
+.st28 {
 	fill: #be834b
 }
 
-.cls-30 {
+.st29 {
 	fill: #ce9051
 }
 
-.cls-31 {
+.st30 {
 	fill: #c3874a
 }
 
-.cls-33 {
+.st32 {
 	fill: #ab6c4b
 }
 
-.cls-34 {
+.st33 {
 	fill: #725231
 }
 
-.cls-35 {
+.st34 {
 	fill: #875e34
 }
 
-.cls-39 {
+.st38 {
 	fill: #52371f
 }
 
-.cls-40 {
+.st39 {
 	fill: #654221
 }
 
-.cls-42 {
+.st41 {
 	fill: #885829
 }
 
-.cls-43 {
+.st42 {
 	fill: #98622e
 }
 
-.cls-45 {
+.st44 {
 	fill: #976b3b
 }
 
-.cls-46 {
+.st45 {
 	fill: #9a6531
 }
 
-.cls-50 {
+.st49 {
 	fill: #af763d
 }
 
-.cls-52 {
+.st51 {
 	fill: #955b42
 }
 
-.cls-55 {
+.st54 {
 	fill: #c58348
 }
 
-.cls-56 {
+.st55 {
 	fill: #b37444
 }
 
-.cls-58 {
+.st57 {
 	fill: #daa25c
 }
 
-.cls-59 {
+.st58 {
 	fill: #d0904f
 }
 
-.cls-65 {
+.st64 {
 	fill: #ce9a59
 }
 
-.cls-67 {
+.st66 {
 	fill: #c49052
 }
 
-.cls-68 {
+.st67 {
 	fill: #d09956
 }
 
-.cls-71 {
+.st70 {
 	fill: #ac773f
 }
 
-.cls-73 {
+.st72 {
 	fill: #dba55f
 }
 
-.cls-75 {
+.st74 {
 	fill: #4e2610
 }
 
-.cls-76 {
+.st75 {
 	fill: #411f0d
 }
 
-.cls-77 {
+.st76 {
 	fill: #532910
 }
 
-.cls-79 {
+.st78 {
 	fill: #331b0d
 }
 
-.cls-81 {
+.st80 {
 	fill: #3d1f0e
 }
 
-.cls-83 {
+.st82 {
 	fill: #160d08
 }
 
-.cls-84 {
+.st83 {
 	fill: #130a06
 }
 
-.cls-86 {
+.st85 {
 	fill: #662813
 }
 
-.cls-89 {
+.st88 {
 	fill: #720e01
 }
 
-.cls-93 {
+.st92 {
 	fill: #720d00
 }
 
-.cls-98 {
+.st97 {
 	fill: #7d1c10
 }
 
-.cls-99 {
+.st98 {
 	fill: #811d12
 }
 
-.cls-101 {
+.st100 {
 	fill: #c14533
 }
 
-.cls-103 {
+.st102 {
 	fill: #ba4532
 }
 
-.cls-108 {
+.st107 {
 	fill: #a43325
 }
 
-.cls-109 {
+.st108 {
 	fill: #811d11
 }
 
-.cls-110 {
+.st109 {
 	fill: #8b261b
 }
 
-.cls-111 {
+.st110 {
 	fill: #822216
 }
 
-.cls-112 {
+.st111 {
 	fill: #ca3229
 }
 
-.cls-113 {
+.st112 {
 	fill: #c52523
 }
 
-.cls-114 {
+.st113 {
 	fill: #c72e29
 }
 
-.cls-115 {
+.st114 {
 	fill: #be412e
 }
 
-.cls-117 {
+.st116 {
 	fill: #c1372b
 }
 
-.cls-118 {
+.st117 {
 	fill: #a42f24
 }
 
-.cls-120 {
+.st119 {
 	fill: #b74232
 }
 
-.cls-127 {
+.st126 {
 	fill: #831c0f
 }
 
-.cls-129 {
+.st128 {
 	fill: #8e261a
 }
 
-.cls-132 {
+.st131 {
 	fill: #cc5e43
 }
 
-.cls-133 {
+.st132 {
 	fill: #c83f2d
 }
 
-.cls-134 {
+.st133 {
 	fill: #d36045
 }
 
-.cls-136 {
+.st135 {
 	fill: #d03f2e
 }
 
-.cls-143 {
+.st142 {
 	fill: #d13f2d
 }
 
-.cls-144 {
+.st143 {
 	fill: #de5f3d
 }
 
-.cls-148 {
+.st147 {
 	fill: #d43f2e
 }
 
-.cls-150 {
+.st149 {
 	fill: #da523a
 }
 
-.cls-151 {
+.st150 {
 	fill: #e25940
 }
 
-.cls-153 {
+.st152 {
 	fill: #7c1a0d
 }
 
-.cls-159 {
+.st158 {
 	fill: #c13d2c
 }
 
-.cls-161 {
+.st160 {
 	fill: #ce4431
 }
 
-.cls-168 {
+.st167 {
 	fill: #d56248
 }
 
-.cls-176 {
+.st175 {
 	fill: #d7593b
 }
 
-.cls-179 {
+.st178 {
 	fill: #751205
 }
 
-.cls-180 {
+.st179 {
 	fill: #80180b
 }
 
-.cls-191 {
+.st190 {
 	fill: #7b160a
 }
 
-.cls-193 {
+.st192 {
 	fill: #7b1609
 }
 
-.cls-201 {
+.st200 {
 	fill: #e05b3e
 }
 
-.cls-212 {
+.st211 {
 	fill: #cb5d43
 }
 
-.cls-219 {
+.st218 {
 	fill: #761205
 }
 
-.cls-224 {
+.st223 {
 	fill: #d1402f
 }
 
-.cls-234 {
+.st233 {
 	fill: #7a170c
 }
 
-.cls-235 {
+.st234 {
 	fill: #7f1a0f
 }
 
-.cls-238 {
+.st237 {
 	fill: #bf422f
 }
 
-.cls-240 {
+.st239 {
 	fill: #bb4632
 }
 
-.cls-241 {
+.st240 {
 	fill: #730f03
 }
 
-.cls-242 {
+.st241 {
 	fill: #7b170c
 }
 
-.cls-246 {
+.st245 {
 	fill: #983125
 }
 
-.cls-257 {
+.st256 {
 	fill: #8a2116
 }
 
-.cls-258 {
+.st257 {
 	fill: #ce5f44
 }
 
-.cls-259 {
+.st258 {
 	fill: #c43e2d
 }
 
-.cls-260 {
+.st259 {
 	fill: #cf402e
 }
 
-.cls-262 {
+.st261 {
 	fill: #d24330
 }
 
-.cls-263 {
+.st262 {
 	fill: #c53d2d
 }
 
-.cls-270 {
+.st269 {
 	fill: #d83d2d
 }
 
-.cls-272 {
+.st271 {
 	fill: #d1412f
 }
 
-.cls-276 {
+.st275 {
 	fill: #df5c3e
 }
 
-.cls-278 {
+.st277 {
 	fill: #dd5e3d
 }
 
-.cls-281 {
+.st280 {
 	fill: #d1422e
 }
 
-.cls-285 {
+.st284 {
 	fill: #d54330
 }
 
-.cls-288 {
+.st287 {
 	fill: #922417
 }
 
-.cls-290 {
+.st289 {
 	fill: #d7402e
 }
 
-.cls-291 {
+.st290 {
 	fill: #b03829
 }
 
-.cls-299 {
+.st298 {
 	fill: #95271a
 }
 
-.cls-336 {
+.st335 {
 	fill: #df593e
 }
 
-.cls-345 {
+.st344 {
 	fill: #e45b41
 }
 
-.cls-378 {
+.st377 {
 	fill: #a6b838
 }
 
-.cls-386 {
+.st385 {
 	fill: #a9a641
 }
 
-.cls-387 {
+.st386 {
 	fill: #8e8b38
 }
 
-.cls-396 {
+.st395 {
 	fill: #a0a03c
 }
 
-.cls-397 {
+.st396 {
 	fill: #9dac38
 }
 
-.cls-401 {
+.st400 {
 	fill: #c8bc5e
 }
 
-.cls-402 {
+.st401 {
 	fill: #b6b057
 }
 
-.cls-404 {
+.st403 {
 	fill: #b2ac45
 }
 
-.cls-406 {
+.st405 {
 	fill: #afcc3a
 }
 
-.cls-407 {
+.st406 {
 	fill: #aac837
 }
 
-.cls-408 {
+.st407 {
 	fill: #a3c437
 }
 
-.cls-411 {
+.st410 {
 	fill: #a8ba3a
 }
 
-.cls-412 {
+.st411 {
 	fill: #9eb636
 }
 
-.cls-414 {
+.st413 {
 	fill: #9cb139
 }
 
-.cls-415 {
+.st414 {
 	fill: #94a139
 }
 
-.cls-418 {
+.st417 {
 	fill: #8f9538
 }
 
-.cls-420 {
+.st419 {
 	fill: #9a9d47
 }
 
-.cls-422 {
+.st421 {
 	fill: #aaa74a
 }
 
-.cls-423 {
+.st422 {
 	fill: #949e38
 }
 
-.cls-426 {
+.st425 {
 	fill: #a5a745
 }
 
-.cls-427 {
+.st426 {
 	fill: #b3af4e
 }
 
-.cls-429 {
+.st428 {
 	fill: #a4a145
 }
 
-.cls-443 {
+.st442 {
 	fill: #b9b35b
 }
 
-.cls-450 {
+.st449 {
 	fill: #a09f3d
 }
 
-.cls-460 {
+.st459 {
 	fill: #97b136
 }
 
-.cls-463 {
+.st462 {
 	fill: #a7a34d
 }
 
-.cls-464 {
+.st463 {
 	fill: #b0a948
 }
 
-.cls-480 {
+.st479 {
 	fill: #9baa39
 }
 
-.cls-488 {
+.st487 {
 	fill: #938c3b
 }
 
-.cls-496 {
+.st495 {
 	fill: #c0ba55
 }
 
-.cls-498 {
+.st497 {
 	fill: #9d9b3b
 }
 
-.cls-500 {
+.st499 {
 	fill: #bab359
 }
 
-.cls-501 {
+.st500 {
 	fill: #9d9c3f
 }
 
-.cls-503 {
+.st502 {
 	fill: #a6c437
 }
 
-.cls-505 {
+.st504 {
 	fill: #99943d
 }
 
-.cls-514 {
+.st513 {
 	fill: #c9c065
 }
 
-.cls-515 {
+.st514 {
 	fill: #a29f3d
 }
 
-.cls-521 {
+.st520 {
 	fill: #a4a83f
 }
 
-.cls-522 {
+.st521 {
 	fill: #a7c637
 }
 
-.cls-525 {
+.st524 {
 	fill: #a9c23a
 }
 
-.cls-526 {
+.st525 {
 	fill: #b0c83b
 }
 
-.cls-535 {
+.st534 {
 	fill: #b4af58
 }
 
-.cls-538 {
+.st537 {
 	fill: #b9b559
 }
 
-.cls-544 {
+.st543 {
 	fill: #b5b162
 }
 
-.cls-546 {
+.st545 {
 	fill: #c3b95b
 }
 
-.cls-551 {
+.st550 {
 	fill: #8e933f
 }
 
-.cls-583 {
+.st582 {
 	fill: #be7a40
 }
 
-.cls-586 {
+.st585 {
 	fill: #9c6d4a
 }
 
-.cls-588 {
+.st587 {
 	fill: #c48249
 }
 
-.cls-590 {
+.st589 {
 	fill: #a2754f
 }
 
-.cls-596 {
+.st595 {
 	fill: #ab6e38
 }
 
-.cls-604 {
+.st603 {
 	fill: #805c3d
 }
 
-.cls-606 {
+.st605 {
 	fill: #a47b50
 }
 
-.cls-609 {
+.st608 {
 	fill: #2f2621
 }
 
-.cls-610 {
+.st609 {
 	fill: #7c5e3c
 }
 
-.cls-611 {
+.st610 {
 	fill: #604326
 }
 
-.cls-613 {
+.st612 {
 	fill: #bf793b
 }
 
-.cls-614 {
+.st613 {
 	fill: #a76a34
 }
 
-.cls-616 {
+.st615 {
 	fill: #a87a46
 }
 
-.cls-623 {
+.st622 {
 	fill: #614426
 }
 
-.cls-628 {
+.st627 {
 	fill: #cc8946
 }
 
-.cls-629 {
+.st628 {
 	fill: #d18d44
 }
 
-.cls-630 {
+.st629 {
 	fill: #ca8e4d
 }
 
-.cls-631 {
+.st630 {
 	fill: #dea762
 }
 
-.cls-632 {
+.st631 {
 	fill: #e5a059
 }
 
-.cls-633 {
+.st632 {
 	fill: #d28d45
 }
 
-.cls-646 {
+.st645 {
 	fill: #fdd689
 }
 
-.cls-653 {
+.st652 {
 	fill: #a77b46
 }
 
-.cls-654 {
+.st653 {
 	fill: #846138
 }
 
-.cls-655 {
+.st654 {
 	fill: #aa7d48
 }
 
-.cls-658 {
+.st657 {
 	fill: #b18650
 }
 
-.cls-660 {
+.st659 {
 	fill: #a27a45
 }
 
-.cls-667 {
+.st666 {
 	fill: #866136
 }
 
-.cls-668 {
+.st667 {
 	fill: #d3924e
 }
 
-.cls-669 {
+.st668 {
 	fill: #d08a43
 }
 
-.cls-670 {
+.st669 {
 	fill: #efb26a
 }
 
-.cls-671 {
+.st670 {
 	fill: #e2a059
 }
 
-.cls-677 {
+.st676 {
 	fill: #c09053
 }
 
-.cls-680 {
+.st679 {
 	fill: #e5a45d
 }
 
