@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect } from 'react';
 import logo from './eggheadLogoFull.svg'
-import burger from './burgerBackground.svg'
+import burger from '../../assets/hero/heroBurger.svg'
 import './hero.css'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Hero = () => {
+
+    const heroBurgerRef = useRef()
+
+    useLayoutEffect(() => {
+
+        const heroBurgerElement = heroBurgerRef.current
+
+        gsap.to(heroBurgerElement, {
+            opacity: .2,
+            y: 100,
+            scrollTrigger: {
+                trigger: heroBurgerElement,
+                start: "start start"
+            }
+        })
+
+        //reminder to do clean up function
+        //look into live refresh -- scrolltrigger refresh
+    },[])
+
     return (
         <div className="container text-center py-5">
             <div className="row py-5">
@@ -22,7 +46,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <img src={burger} alt="" className="burgerBackground" />
+            <img src={burger} alt="" ref={heroBurgerRef} className="burgerBackground" />
         </div>
     )
 }
