@@ -9,23 +9,49 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
 
+    const burgerBoxRef = useRef()
     const heroBurgerRef = useRef()
+    const burgerBadgeRef = useRef()
 
     useLayoutEffect(() => {
 
+        const burgerBoxElement = burgerBoxRef.current
         const heroBurgerElement = heroBurgerRef.current
+        const burgerBadgeElement = burgerBadgeRef.current
 
         gsap.to(heroBurgerElement, {
-            opacity: .2,
-            y: 100,
+            opacity: .1,
+            y: -50,
             scrollTrigger: {
-                trigger: heroBurgerElement,
+                trigger: burgerBoxElement,
                 start: "start start"
             }
         })
 
+        gsap.fromTo(burgerBadgeElement, 
+        //from - or the starting values
+        {
+            opacity: 0,
+            scale: 3,
+            y: 100
+        }, 
+        //to - or the ending values
+        {
+            opacity: 1,
+            scale: 1,
+            y: 160,
+            scrollTrigger: {
+                trigger: burgerBoxElement,
+                start: "start start"
+            }
+        },
+
+        
+        );
+        ScrollTrigger.refresh(true)
         //reminder to do clean up function
         //look into live refresh -- scrolltrigger refresh
+        //reminder to place in markers
     },[])
 
     return (
@@ -38,15 +64,16 @@ const Hero = () => {
                 </div>
             </div>
     
-            <div className="row mt-5">
-                <div className="col-12">
-                    <div className="d-inline-block text-white px-4 py-4 dotted-border">
+
+            <div style={{border: '2px solid red'}} ref={burgerBoxRef} className="burgerBox">
+                <div className="d-inline-block text-white px-4 py-4 dotted-border" ref={burgerBadgeRef}>
                     <p className="text-white display-4">Badass Burger</p>
-                    </div>
                 </div>
+                <img src={burger} alt="" ref={heroBurgerRef} />
             </div>
 
-            <img src={burger} alt="" ref={heroBurgerRef} className="burgerBackground" />
+        
+
         </div>
     )
 }

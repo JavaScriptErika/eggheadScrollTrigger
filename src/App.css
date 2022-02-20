@@ -39,29 +39,6 @@ p {
 
 
 
-.dotted-border {
-	position: relative;
-	border: 2px dotted #fff;
-	background: linear-gradient(#1E2241, transparent) no-repeat;
-	transform: rotate(-7deg);
-}
-
-.dotted-border:before {
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: -1rem;
-	background-image: url('./assets/newBadge.svg');
-	background-size: 5rem 5rem;
-	height: 5rem;
-	width: 5rem;
-}
-
-.border-yellow {
-	border: 3px solid #FFCC33;
-	border-right: none;
-	border-left: none;
-}
 
 .cls-1 {
 	fill: #c58d50
