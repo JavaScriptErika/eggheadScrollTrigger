@@ -66,9 +66,9 @@ function App() {
   return (
     <>
  
-    <section style={{overflowY: 'hidden', position: 'relative', height: '100vh'}} className="d-flex">
+    <section>
       <Hero />
-      {/* <Fire /> */}
+      <Fire />
     </section>
 
 

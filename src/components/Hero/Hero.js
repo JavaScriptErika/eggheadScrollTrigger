@@ -42,7 +42,7 @@ const Hero = () => {
     
     console.log(burgerBoxRef.current)
     return (
-        <div className="container text-center py-5">
+        <>  
             <EggheadIntro 
                 logo={logo}
                 intro="presents the ultimately unreal"  
@@ -50,7 +50,8 @@ const Hero = () => {
 
             <BadassBurger ref={burgerBoxRef} img={heroBurgerSvg} />
 
-        </div>
+        </>
+
     )
 }
 

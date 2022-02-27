@@ -26,12 +26,15 @@ const Fire = () => {
             trigger: ".fire",
             // markers: true,
             start: "top bottom",
-            toggleActions: "play restart restart pause"
+            toggleActions: "play restart restart pause",
             // toggleActions: "play none none none"
             // end: "top top"
+            onUpdate: self => {
+
+            }
       },
-      yPercent: -50,
-    //   stagger: .2,
+      yPercent: "random(-100, -50, 5)",
+      duration: "random(.5, 2, .1)",
       scale: 1.2,
       transformOrigin: 'center center',
       duration: .5,
