@@ -1,6 +1,8 @@
 import React, { useRef, useLayoutEffect } from 'react';
-import logo from './eggheadLogoFull.svg'
-import burger from '../../assets/hero/heroBurger.svg'
+import EggheadIntro from './EggheadIntro';
+import BadassBurger from './BadassBurger';
+import logo from '../../assets/hero/eggheadLogoFull.svg'
+import heroBurgerSvg from '../../assets/hero/heroBurger.svg'
 import './hero.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,19 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
 
-    const burgerBoxRef = useRef()
-    const heroBurgerRef = useRef()
-    const burgerBadgeRef = useRef()
+    const burgerBoxRef = useRef(null)
 
     useLayoutEffect(() => {
-
-        const burgerBoxElement = burgerBoxRef.current
-        const heroBurgerElement = heroBurgerRef.current
-        const burgerBadgeElement = burgerBadgeRef.current
+        
+        const burgerBadgeElement = burgerBoxRef.current.children[0]
+        const heroBurgerElement = burgerBoxRef.current.children[1]
 
         let heroBurgerBadgeTL = gsap.timeline({
             scrollTrigger: {
-                trigger: burgerBoxElement,
+                trigger: burgerBoxRef.current,
                 start: "start start"
             }
         })
@@ -30,60 +29,26 @@ const Hero = () => {
             .to(heroBurgerElement, {opacity: .1, y: -30})
             .fromTo(burgerBadgeElement, { opacity: 0, scale: 3, y: 100}, { opacity: 1, scale: 1, y: 50}, "<")
 
-        // gsap.to(heroBurgerElement, {
-        //     opacity: .1,
-        //     y: -30,
-        //     scrollTrigger: {
-        //         trigger: burgerBoxElement,
-        //         start: "start start"
-        //     }
-        // })
-
-        // gsap.fromTo(burgerBadgeElement, 
-        // //from - or the starting values
-        // {
-        //     opacity: 0,
-        //     scale: 3,
-        //     y: 100
-        // }, 
-        // //to - or the ending values
-        // {
-        //     opacity: 1,
-        //     scale: 1,
-        //     y: 50,
-
-        // },
-        // scrollTrigger: {
-        //     trigger: burgerBoxElement,
-        //     start: "start start"
-        // }
-        
-        // );
         //ScrollTrigger.refresh(true)
         //reminder to do clean up function
         //look into live refresh -- scrolltrigger refresh
         //reminder to place in markers
+        return () => {
+            heroBurgerBadgeTL.scrollTrigger.kill()
+        }
     },[])
 
+
+    
+    console.log(burgerBoxRef.current)
     return (
         <div className="container text-center py-5">
-            <div className="row py-5">
-                <div className="col-md-8 offset-md-2 text-white">
-                    <img src={logo} alt="egghead logo" className="img-fluid" style={{maxWidth: '20rem'}} />
-                    <p className="d-inline h1"> bistro</p>
-                    <p className="h3 py-2">presents the ultimately unreal</p>
-                </div>
-            </div>
-    
+            <EggheadIntro 
+                logo={logo}
+                intro="presents the ultimately unreal"  
+            />
 
-            <div style={{border: '2px solid red'}} ref={burgerBoxRef} className="burgerBox">
-                <div className="text-white px-4 py-4 dotted-border" ref={burgerBadgeRef}>
-                    <p className="text-white display-4">Badass Burger</p>
-                </div>
-                <img src={burger} alt="" ref={heroBurgerRef} />
-            </div>
-
-        
+            <BadassBurger ref={burgerBoxRef} img={heroBurgerSvg} />
 
         </div>
     )
