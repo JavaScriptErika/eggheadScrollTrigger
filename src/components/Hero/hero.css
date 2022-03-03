@@ -1,5 +1,6 @@
 .burgerBox {
-	overflow-x: hidden;
+	position: relative;
+	overflow: hidden;
 	padding-top: 6rem;
 	padding-bottom: 3rem;
 	display: flex;

@@ -68,7 +68,7 @@ function App() {
  
     <section>
       <Hero />
-      <Fire />
+
     </section>
 
 
