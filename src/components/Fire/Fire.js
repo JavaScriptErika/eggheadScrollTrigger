@@ -1,11 +1,11 @@
 import './fire.css'
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
 
 
-const Fire = () => {
+const Fire = (props) => {
     const fireParentElementRef = useRef()
     const fireSelector = gsap.utils.selector(fireParentElementRef) 
     //Why use a scoped selector? We only need to use a single ref! Allows for cleaner code instead of multiple refs. 
@@ -18,30 +18,78 @@ const Fire = () => {
     // https://greensock.com/docs/v3/GSAP/UtilityMethods/selector()
 
     useLayoutEffect(() => {
-      //we're tweening the y axis, and for simpler scroll triggers, we can use scrolltrigger as property
-      //GSAP can animate any CSS property -- if there are hyphens in CSS properties you want to use, use camelCase 
-      //With our selector function referenced in fireSelector, we need to tell it which descendants we want it to grab 
-      gsap.to(fireSelector(".flame"), {
-        scrollTrigger: {
-            trigger: fireParentElementRef.current,
-            // markers: true,
-            // start: "top bottom",
-            // toggleActions: "play restart restart pause",
-            // toggleActions: "play none none none"
-            // end: "top top"
-            onUpdate: self => {
+        //Look into flashing elements 
+        gsap.fromTo(fireSelector(".flame"), 
+            {
+                y: '30rem', 
+                opacity: 0
+            },
 
+            {
+                y: '10rem',
+                opacity: 1,
+
+                scrollTrigger: {
+                    trigger: props.burgerBoxRef.current,
+                    // trigger: fireParentElementRef.current,
+                    markers: true,
+                    start: "center top",
+                    // toggleActions: "play restart restart pause",
+                    // toggleActions: "play none none none"
+                    // end: "top top"
+                    // onUpdate: self => {
+                }
             }
-      },
+    )},[])
 
-      yPercent: -50,
-    //   yPercent: "random(-100, -50, 5)",
-    //   duration: "random(.5, 2, .1)",
-    //   transformOrigin: 'center center',
-    //   duration: .5,
-    });
+    // useLayoutEffect(() => {
+    //   //we're tweening the y axis, and for simpler scroll triggers, we can use scrolltrigger as property
+    //   //GSAP can animate any CSS property -- if there are hyphens in CSS properties you want to use, use camelCase 
+    //   //With our selector function referenced in fireSelector, we need to tell it which descendants we want it to grab 
+    //   gsap.fromTo(fireSelector(".flame"), 
 
-    },[])
+    // //   //from - where the element starts
+    //   {y: '30rem'},
+    // //   //to - where the element ends
+    //   {y: '10rem',
+    //       scrollTrigger: {
+    //     // trigger: props.burgerBoxRef.current,
+    //        trigger: fireParentElementRef.current,
+    //        markers: true,
+    //        start: "bottom top",
+    //     // toggleActions: "play restart restart pause",
+    //     // toggleActions: "play none none none"
+    //     // end: "top top"
+    //     // onUpdate: self => {
+
+    //         }
+    //     }
+    // }, [])
+
+    //   {
+    //       scrollTrigger: {
+    //     // trigger: props.burgerBoxRef.current,
+    //        trigger: fireParentElementRef.current,
+    //        markers: true,
+    //        start: "bottom top",
+    //     // toggleActions: "play restart restart pause",
+    //     // toggleActions: "play none none none"
+    //     // end: "top top"
+    //     // onUpdate: self => {
+
+    //     // }
+    // }}
+      
+
+    //  // yPercent: -50,
+    // //   yPercent: "random(-100, -50, 5)",
+    // //   duration: "random(.5, 2, .1)",
+    // //   transformOrigin: 'center center',
+    // //   duration: .5,
+    // );
+
+   
+
 
 
     return (
@@ -51,7 +99,7 @@ const Fire = () => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         fill="none"
         viewBox="0 0 1937 595"
-        style={{position: 'absolute'}}
+        style={{position: 'absolute', bottom: '0'}}
         ref={fireParentElementRef}
     >
         <defs>

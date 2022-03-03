@@ -48,7 +48,7 @@ const Hero = () => {
                 intro="presents the ultimately unreal"  
             />
 
-            <BadassBurger ref={burgerBoxRef} img={heroBurgerSvg} />
+            <BadassBurger ref={burgerBoxRef} img={heroBurgerSvg} burgerBoxRef={burgerBoxRef} />
 
         </>
 
