@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const Fire = (props) => {
-    const fireParentElementRef = useRef()
-    const fireSelector = gsap.utils.selector(fireParentElementRef) 
+    // const fireParentElementRef = useRef()
+    // const fireSelector = gsap.utils.selector(fireParentElementRef) 
     //Why use a scoped selector? We only need to use a single ref! Allows for cleaner code instead of multiple refs. 
     //Can pass a React ref or class to gsap.utils.selector
     //internally this looks like fireParentElement.current.querySelectorAll() but instead pf calling it on the document like we would in vanilla JavaScript, it's calling querySelectorAll
@@ -17,30 +17,30 @@ const Fire = (props) => {
     // so it will only look for descendants inside of our fire SVG, we need to give our selector function a class to select things! 
     // https://greensock.com/docs/v3/GSAP/UtilityMethods/selector()
 
-    useLayoutEffect(() => {
+    // useLayoutEffect(() => {
         //Look into flashing elements 
-        gsap.fromTo(fireSelector(".flame"), 
-            {
-                y: '30rem', 
-                opacity: 0
-            },
+        // gsap.fromTo(fireSelector(".flame"), 
+        //     {
+        //         y: '30rem', 
+        //         opacity: 0
+        //     },
 
-            {
-                y: '10rem',
-                opacity: 1,
+        //     {
+        //         y: '10rem',
+        //         opacity: 1,
 
-                scrollTrigger: {
-                    trigger: props.burgerBoxRef.current,
+        //         scrollTrigger: {
+        //             trigger: props.burgerBoxRef.current,
                     // trigger: fireParentElementRef.current,
-                    markers: true,
-                    start: "center top",
+                    // markers: true,
+                    // start: "center top",
                     // toggleActions: "play restart restart pause",
                     // toggleActions: "play none none none"
                     // end: "top top"
                     // onUpdate: self => {
-                }
-            }
-    )},[])
+    //             }
+    //         }
+    // )},[])
 
     // useLayoutEffect(() => {
     //   //we're tweening the y axis, and for simpler scroll triggers, we can use scrolltrigger as property
@@ -100,7 +100,6 @@ const Fire = (props) => {
         fill="none"
         viewBox="0 0 1937 595"
         style={{position: 'absolute', bottom: '0'}}
-        ref={fireParentElementRef}
     >
         <defs>
         <path id="f" fill="#fff" d="M0 0h446.643v513.107H0z" />
