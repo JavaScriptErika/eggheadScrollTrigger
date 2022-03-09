@@ -28,21 +28,29 @@ const Hero = () => {
                 markers: true,
                 onUpdate: self => {
                     console.log(self.isActive)
-                    if(!self.isActive) {
-                        gsap.to(fireSelector(".flame"), 
-                        {
-                            transformOrigin: 'center center', 
-                            rotate: "random(-3, 3, 1)", 
-                            opacity: "random(.5, 1, .1)", 
-                            yoyo:true,
-                            repeat: -1 
-                        }
-                        );
-                    }
-       
+                    !self.isActive ? burgerFlamesTL.play() : burgerFlamesTL.pause()
                    }
             }
         })
+
+        let burgerFlamesTL = gsap.timeline({ repeat: -1, yoyo: true})
+        gsap.set(fireSelector(".flame"), {transformOrigin: 'center center'})
+        //gsap set
+
+        burgerFlamesTL
+            .to(fireSelector(".flame"), {
+                rotate: "random(-3, 3, 1)", 
+                duration: 2,
+                // stagger: .4,
+                ease: "back.out(1.7)",
+            })
+            .to(fireSelector(".flame"), 
+                {
+                opacity: "random(.75, 1, .1)", 
+                duration: 3,
+                // stagger: .4,
+               // ease: "elastic.inOut(1, 0.5)",
+            }, 0)
 
         heroBurgerBadgeTL
             .to(heroBurgerElement, {opacity: .1, y: -30})
@@ -60,6 +68,7 @@ const Hero = () => {
         //reminder to place in markers
         return () => {
             heroBurgerBadgeTL.scrollTrigger.kill()
+            burgerFlamesTL.scrollTrigger.kill()
         }
     },[])
 
